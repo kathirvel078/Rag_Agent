@@ -70,7 +70,7 @@ export const ChatContainer = () => {
                 : "Ask me anything about your uploaded documents. I'll search through the knowledge base to find the right answers."}
             </p>
             
-            {hasProcessedDocs && (
+            {/* {hasProcessedDocs && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl w-full">
                 {['What is the main topic of the documents?', 'Can you summarize the key points?', 'Are there any specific dates mentioned?', 'List the main conclusions.'].map((suggestion, i) => (
                   <button
@@ -82,7 +82,7 @@ export const ChatContainer = () => {
                   </button>
                 ))}
               </div>
-            )}
+            )} */}
           </div>
         ) : (
           <div className="pb-8 pt-4">

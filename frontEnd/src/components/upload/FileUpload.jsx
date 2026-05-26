@@ -89,8 +89,8 @@ export const FileUpload = () => {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto p-6 bg-card rounded-2xl border border-border shadow-sm mb-6">
-      <div className="mb-4">
+    <div className="w-full max-w-3xl mx-auto p-1 bg-card rounded-2xl border border-border shadow-sm mb-2">
+      <div className="mb-2">
         <h2 className="text-xl font-semibold text-foreground flex items-center gap-2">
           <UploadCloud className="w-6 h-6 text-primary" />
           Add Knowledge
@@ -117,16 +117,16 @@ export const FileUpload = () => {
             accept=".pdf,.docx,.txt"
             onChange={handleChange}
           />
-          <div className="w-14 h-14 bg-background border border-border rounded-full flex items-center justify-center mb-4 shadow-sm group-hover:scale-110 transition-transform duration-300">
-            <UploadCloud className="w-7 h-7 text-primary" />
+          <div className="w-14 h-10 bg-background border border-border rounded-full flex items-center justify-center mb-1 shadow-sm group-hover:scale-110 transition-transform duration-300">
+            <UploadCloud className="w-5 h-5 text-primary" />
           </div>
           <h3 className="text-lg font-medium text-foreground mb-1">Click to upload or drag and drop</h3>
           <p className="text-sm text-muted-foreground">PDF, DOCX, or TXT (Max. 10MB)</p>
         </div>
       ) : (
-        <div className="border border-border rounded-xl p-4 bg-background flex flex-col gap-4">
+        <div className="border border-border rounded-xl p-2 bg-background flex flex-col gap-2">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3 min-w-0">
+            <div className="flex items-center gap-2 min-w-0">
               <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                 <FileIcon className="w-5 h-5 text-primary" />
               </div>

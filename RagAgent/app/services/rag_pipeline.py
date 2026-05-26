@@ -11,7 +11,7 @@ class RAGPipelineService:
 
         llm = ChatOllama(
             model=settings.OLLAMA_MODEL,
-            temperature=0.1
+            temperature=0.5
         )
 
         return llm
