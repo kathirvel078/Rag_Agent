@@ -7,7 +7,7 @@ class EmbeddingService:
     def get_embedding_model():
 
         embeddings = HuggingFaceEmbeddings(
-            model_name=settings.EMBEDDING_MODEL
+            model_name=settings.EMBEDDING_MODEL  #sentence-transformers/all-MiniLM-L6-v2-->embedding/semantic search
         )
 
         return embeddings

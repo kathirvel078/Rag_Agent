@@ -12,10 +12,7 @@ import os
 
 router = APIRouter()
 
-
-# ==============================
 # Upload Document
-# ==============================
 @router.post("/", response_model=UploadResponse)
 async def upload_document(file: UploadFile = File(...)):
 
@@ -48,10 +45,7 @@ async def upload_document(file: UploadFile = File(...)):
         message="File uploaded successfully"
     )
 
-
-# ==============================
 # Generate Chunks
-# ==============================
 @router.get("/chunks/{filename}")
 async def generate_chunks(filename: str):
 
@@ -89,9 +83,7 @@ async def generate_chunks(filename: str):
         "first_chunk_metadata": chunks[0].metadata
     }
 
-
 # Generate Embeddings
-# ==============================
 @router.get("/embeddings/{filename}")
 async def generate_embeddings(filename: str):
 
@@ -130,7 +122,7 @@ async def generate_embeddings(filename: str):
     # Generate embedding
     embedding_vector = embedding_model.embed_query(
         chunks[0].page_content
-    )
+    )  #dimensions
 
     return {
         "filename": filename,

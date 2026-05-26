@@ -10,10 +10,10 @@ class TextSplitterService:
             chunk_overlap=200,
             length_function=len,
             separators=[
-                "\n\n",
-                "\n",
-                " ",
-                ""
+                "\n\n",  #para
+                "\n",   #line
+                " ",    #word
+                ""      #char to large 
             ]
         )
 

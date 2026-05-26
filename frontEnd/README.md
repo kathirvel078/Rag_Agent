@@ -1,16 +1,59 @@
-# React + Vite
+# AI RAG Assistant Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a modern, production-ready React.js frontend for an AI-powered RAG (Retrieval-Augmented Generation) application. It provides a ChatGPT-style interface with a seamless document upload and processing workflow.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Document Upload**: Support for PDF, DOCX, and TXT files with drag-and-drop.
+- **Vector Store Processing**: Process uploaded documents seamlessly into a vector database for RAG.
+- **AI Chat Interface**: Interactive chat with markdown support and source citation.
+- **Source Tracing**: View document sources and page numbers for the generated answers.
+- **Dark Mode**: Built-in support for dark and light modes.
+- **Modern UI**: Polished, responsive design using Tailwind CSS, Lucide icons, and Framer Motion.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React.js (Vite)
+- Tailwind CSS
+- Axios (API Client)
+- React Hot Toast (Notifications)
+- Lucide React (Icons)
+- Framer Motion (Animations)
 
-## Expanding the ESLint configuration
+## Setup Instructions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Install Dependencies**
+   ```bash
+   npm install
+   ```
+
+2. **Environment Variables**
+   Create a `.env` file in the root directory and add the backend API URL:
+   ```env
+   VITE_API_URL=http://localhost:8000
+   ```
+   *An example `.env` file has been provided in the project.*
+
+3. **Start Development Server**
+   ```bash
+   npm run dev
+   ```
+   
+   The app will be accessible at `http://localhost:5173` (or another port depending on Vite).
+
+## API Integration
+
+The frontend expects the backend to expose the following endpoints:
+
+- `POST /upload`: Uploads a document (expects `multipart/form-data` with `file`).
+- `POST /upload/store/{filename}`: Processes the uploaded document into the vector store.
+- `POST /ask`: Accepts a JSON payload `{ "question": "..." }` and returns `{ "answer": "...", "sources": [...] }`.
+
+## Architecture
+
+- `src/components/`: Modular UI components organized by feature (chat, layout, upload, etc.).
+- `src/context/`: React Context for global state management.
+- `src/services/`: API layer for handling backend communication with Axios.
+- `src/pages/`: Main application views.
+
+Enjoy building your AI applications!
